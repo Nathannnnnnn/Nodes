@@ -22,3 +22,13 @@ module.exports.test = function(callback) {
         }
     });
 };
+module.exports.test = function(LettreVip,callback) {
+    db.getConnection(function(err, connexion) {
+        if (!err) {
+            let sql = "select photo_adresse as Photo_star from photo p inner join vip v ON v.vip_numero = p.vip_numero Where vip_nom like '"+LettreVip+"%' and photo_numero =1;";
+              // console.log(sql);
+            connexion.query(sql, callback);
+            connexion.release();
+        }
+    });
+};

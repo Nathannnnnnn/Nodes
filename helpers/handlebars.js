@@ -8,7 +8,7 @@ function hbsHelpers(handlebars) {
         defaultLayout: 'main',
 
         partialsDir: ['views/partials/'],
-
+        imagesDir: ['public/partials/images/vip/'],
         helpers: {
             inc: function(value, options) {
                 return parseInt(value) + 1;
